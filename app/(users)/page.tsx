@@ -18,7 +18,7 @@ const images = [image1, image2, image3, image4];
 const ChurchPage = () => {
   return (
   <>
-    <div className="overscroll-y-none">
+    <div className="overscroll-y-none ">
       <div  className="relative text-white mt-[77px]">
         <ImageComponent src="/worship.jpg" className="w-full h-[48rem] absolute object-cover top-0 left-0 z-[-1]" />
         <div className="flex flex-col items-center justify-center min-h-[650px]">

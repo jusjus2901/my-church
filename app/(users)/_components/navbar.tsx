@@ -20,7 +20,7 @@ export const Navbar = () => {
       ]
 
     return (
-        <div className="fixed top-0 w-full h-[5.1rem] px-4 bg-gradient-to-r from-slate-200 to-slate-800 flex items-center">
+        <div className="fixed top-0 w-full h-[5.1rem] px-4 bg-slate-600 text-white  flex items-center">
             <div className="md:max-w-screen-xl mx-auto flex items-center w-full justify-between">
                 <Logo />
                 <ul className="text-lg space-x-10 font-semibold hidden lg:flex">
@@ -29,9 +29,9 @@ export const Navbar = () => {
                             <Link
                                 key={navlinks.href}
                                 className={classNames({
-                                "tex text-teal-600": navlinks.href === currentPath,
-                                "text text-black": navlinks.href !== currentPath,
-                                "h hover:text-zinc-500 transition-colors": true,
+                                "tex text-sky-500": navlinks.href === currentPath,
+                                "text text-sky-100": navlinks.href !== currentPath,
+                                "h hover:text-sky-200 transition-colors": true,
                                 })}
                                 href={navlinks.href}>
                                 {navlinks.label}
@@ -44,14 +44,14 @@ export const Navbar = () => {
                         <GiHamburgerMenu/>
                     </span>
                     <div className="w-full flex justify-end md:inline-block md:w-fit">
-                        <Button size="sm" variant="outline">
+                        <Button size="icon" className="bg-slate-800 rounded-xl hover:bg-black hover:text-sky-200">
                             <Link href="/sign-up">
                                 Login
                             </Link>
                         </Button>
                     </div>
                     
-                    <Button size="sm">
+                    <Button size="icon" className="bg-slate-800 rounded-xl hover:bg-black hover:text-sky-200 w-28">
                          <Link href="/contact">
                              Contact Us
                          </Link>
