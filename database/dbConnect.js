@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
-import User from './model/User'
+import * as models from './model'
 
-const mongodb_uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/church?retryWrites=true&w=majority'
+const mongodb_uri = process.env.MONGODB_URI
 
 let cached = global.mongoose
 
@@ -17,7 +17,7 @@ export default async function dbConnect(local = false) {
     const opts = {
       bufferCommands: false,
     }
-    cached.promise = mongoose.connect(!local ? mongodb_uri : 'mongodb://127.0.0.1:27017/church?retryWrites=true&w=majority', opts).then((mongoose) => {
+    cached.promise = mongoose.connect(!local && mongodb_uri ? mongodb_uri : 'mongodb://127.0.0.1:27017/church?retryWrites=true&w=majority', opts).then((mongoose) => {
       return mongoose
     })
   }
