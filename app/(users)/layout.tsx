@@ -1,3 +1,6 @@
+import { Navbar } from "@/app/(users)/_components/navbar";
+import { Footer } from "@/app/(users)/_components/footer"
+
 
 const ChurchLayout = ({ 
     children
@@ -6,9 +9,11 @@ const ChurchLayout = ({
 }) => { 
     return(
         <div className="">
+            <Navbar/>
                 <main className="">
                     {children}
                 </main>
+            <Footer/>
         </div>
     );
 };
